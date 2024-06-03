@@ -1,0 +1,12 @@
+stages:
+  - deploy
+
+deploy_prod:
+  stage: deploy
+  script:
+    - echo "Deploy to production server"
+  environment:
+    name: production
+  rules:
+    - if: $CI_COMMIT_BRANCH == master
+      # when: manual
